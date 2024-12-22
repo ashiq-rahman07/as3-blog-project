@@ -1,5 +1,7 @@
-import { Schema } from "mongoose";
+import { model, Schema } from "mongoose";
 import bcrypt from 'bcrypt';
+import config from "../../config";
+import { TUser, UserModel } from "./user.interface";
 
 const userSchema = new Schema(
     {
@@ -52,3 +54,5 @@ const userSchema = new Schema(
     doc.password = '';
     next();
   });
+
+  export const User = model<TUser, UserModel>('User', userSchema);
