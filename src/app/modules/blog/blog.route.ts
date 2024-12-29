@@ -18,7 +18,7 @@ router.get('/blogs/:id', BlogControllers.getSingleBlog);
 
 router.patch('/blogs/:id',auth('user'),validateRequest(BlogValidations.updateBlogValidationSchema), BlogControllers.updateBlogById);
 
-router.delete('/blogs/:id',auth('user'),BlogControllers.deleteBlogById);
+router.delete('/blogs/:id',auth('user','admin'),BlogControllers.deleteBlogById);
 router.get('/blogs',BlogControllers.getAllBlog);
 
 
