@@ -55,9 +55,8 @@ const loginUser = async (payload: TLoginUser) => {
     // );
   
     return {
-      accessToken,
-    //   refreshToken,
-    //   needsPasswordChange: user?.needsPasswordChange,
+      accessToken
+   
     };
   };
 
