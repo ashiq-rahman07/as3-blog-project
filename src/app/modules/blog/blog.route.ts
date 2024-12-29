@@ -9,7 +9,6 @@ const router = express.Router();
 router.post(
   '/blogs',
   auth('user'),
-  // validateRequest(BlogValidations.createBlogValidationSchema),
   BlogControllers.createBlog,
 );
 

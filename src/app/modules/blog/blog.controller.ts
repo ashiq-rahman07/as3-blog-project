@@ -6,6 +6,7 @@ import { Blog } from './blog.model';
 
 const createBlog = catchAsync(async (req, res) => {
   // console.log(req.user, req.body);
+  console.log(req.user);
   const result = await BlogServices.createBlog(req.user, req.body);
 
   sendResponse(res, {
