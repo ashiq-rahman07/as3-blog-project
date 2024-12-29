@@ -1,4 +1,4 @@
-import { Types } from "mongoose";
+import { Model, Types } from "mongoose";
 
 
 export interface TBlog {
@@ -8,3 +8,8 @@ export interface TBlog {
     isPublished?: boolean
 }
 
+
+ export interface BlogModel extends Model<TBlog>{
+  
+  isAuthorByBlog(_id: string,author:string): Promise<TBlog>;
+  }

@@ -1,5 +1,5 @@
 import { model, Schema, Types } from "mongoose";
-import { TBlog } from "./blog.interface";
+import { BlogModel, TBlog } from "./blog.interface";
 
 
 const blogSchema = new Schema(
@@ -28,4 +28,9 @@ const blogSchema = new Schema(
 );
 
 
-export const Blog = model<TBlog>('Blog', blogSchema);
+ blogSchema.statics.isAuthorByBlog = async function (blogId: string,authorId:string){
+    return await Blog.findOne({_id:blogId,author:authorId});
+  };
+  
+
+export const Blog = model<TBlog, BlogModel>('Blog', blogSchema);

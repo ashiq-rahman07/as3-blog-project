@@ -7,7 +7,7 @@ import { UserServices } from "./user.service";
 const registerUserIntoDB =catchAsync(async(req,res)=>{
 
     const result = await UserServices.registerUserIntoDB(req.body);
-    console.log(result);
+   
 
     sendResponse(res, {
       success: true,
