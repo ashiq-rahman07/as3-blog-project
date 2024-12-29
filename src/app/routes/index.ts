@@ -4,7 +4,6 @@ import { BlogRoutes } from '../modules/blog/blog.route';
 import { AuthRoutes } from '../modules/Auth/auth.route';
 import { AdminRoutes } from '../modules/admin/admin.route';
 
-
 const router = Router();
 
 const moduleRoutes = [
@@ -13,18 +12,17 @@ const moduleRoutes = [
     route: UserRoutes,
   },
   {
-    path:'/',
-    route:BlogRoutes,
+    path: '/',
+    route: BlogRoutes,
   },
   {
-    path:'/auth',
-    route:AuthRoutes,
+    path: '/auth',
+    route: AuthRoutes,
   },
   {
-    path:'/admin',
-    route:AdminRoutes,
-  }
-  
+    path: '/admin',
+    route: AdminRoutes,
+  },
 ];
 
 moduleRoutes.forEach((route) => router.use(route.path, route.route));

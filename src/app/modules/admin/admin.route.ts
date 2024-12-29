@@ -5,13 +5,9 @@ const router = express.Router();
 
 router.patch(
   '/users/:userId/block',
-    auth('admin'),
+  auth('admin'),
   AdminController.adminBlockUser,
 );
-router.delete(
-  '/blogs/:id',
-    auth('admin'),
-  AdminController.adminDeleteBlog,
-);
+router.delete('/blogs/:id', auth('admin'), AdminController.adminDeleteBlog);
 
 export const AdminRoutes = router;

@@ -1,7 +1,6 @@
-
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
-import express, { Application,Request,Response } from 'express';
+import express, { Application, Request, Response } from 'express';
 import globalErrorHandler from './app/middlewares/globalErrorhandler';
 import notFound from './app/middlewares/notFound';
 import router from './app/routes';
@@ -17,8 +16,8 @@ app.use(cors({ origin: ['http://localhost:5173'] }));
 app.use('/api', router);
 
 const test = async (req: Request, res: Response) => {
-//   const a = 10;
-  res.send("Hello Assignment 3");
+  //   const a = 10;
+  res.send('Hello Assignment 3');
 };
 
 app.get('/', test);

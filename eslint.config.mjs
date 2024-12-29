@@ -8,6 +8,7 @@ export default {
       "plugin:@typescript-eslint/recommended",
       "prettier",
     ],
+    files: ["*.ts", "*.tsx"],
     parser: "@typescript-eslint/parser",
     parserOptions: {
       ecmaVersion: "latest",
@@ -24,6 +25,7 @@ export default {
     globals: {
       process: "readonly",
     },
+    ignorePatterns: ['dist/**', 'node_modules/**'], 
     ignores: [".node_modules/*"]
   };
   
